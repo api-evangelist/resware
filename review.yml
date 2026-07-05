@@ -1,0 +1,108 @@
+aid: resware
+name: ResWare
+review:
+  question: Does ResWare expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. ResWare's integration API is a gated,
+    partner-only surface with no public API reference. Its documented transport
+    is SOAP/XML web services over Windows Communication Foundation (WCF) plus
+    newer REST endpoints for document handling. There is no server-push
+    transport (WebSocket or SSE) documented on ResWare's own API to model, and
+    the surface is not publicly accessible, so no AsyncAPI spec was created.
+findings:
+  summary: |
+    ResWare does not publish a documented public WebSocket API. ResWare is
+    customizable title and escrow production software originally built by
+    Adeptive Software Corporation and acquired by Qualia Labs in December 2020
+    (now ResWare 10 within the Qualia ecosystem). It is an on-premises,
+    workflow-driven platform. Its integration API is offered only to partners
+    and customers through a gated partner/integration program and an
+    "API assistance" package (developer support hours, REST/WCF code samples,
+    documentation); pricing is on request and the developer contact is
+    sales@adeptivesw.com. There is no public, self-serve developer portal or
+    published API reference/OpenAPI. The API is historically a SOAP/XML
+    web-service API built on WCF (Microsoft binary protocol by default, Basic
+    Authentication available on request), complemented by REST APIs for
+    document handling. No realtime, bidirectional, or streaming WebSocket
+    (ws:// or wss://) endpoint is documented anywhere for ResWare.
+  ownership: |
+    ResWare is developed by Adeptive Software Corporation, acquired by Qualia
+    Labs, Inc. on December 21, 2020. It continues as a core title/escrow
+    production product in the Qualia ecosystem (ResWare 10).
+  accessModel: |
+    Gated / partner-only. No public developer portal, no self-serve signup, no
+    published API reference or OpenAPI. Access is granted through a
+    partner/integration program plus an API assistance package. Deployment is
+    on-premises, so there is no single fixed public base URL; each ResWare
+    instance is customer-hosted. A gated knowledge base exists at
+    knowledge.resware.com.
+  transports:
+    - protocol: SOAP
+      scheme: http/https
+      documented: partner-only
+      note: |
+        Primary integration transport. SOAP/XML web services implemented on
+        Windows Communication Foundation (WCF). Default binding uses Microsoft's
+        binary protocol; Basic Authentication for WCF is available on request.
+        This is the partner/proxy web-service surface exchanging orders,
+        documents, contacts, tasks, notes, and status.
+    - protocol: REST
+      scheme: https
+      documented: partner-only
+      note: |
+        Newer REST APIs used mainly for document handling. Endpoint paths such
+        as /Api/files/search and /Api/files/:file_id/documents have been
+        observed in partner integrations (e.g. signing/RON providers pushing
+        executed documents back). No public REST reference is published.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: |
+        No WebSocket endpoint is documented for ResWare in any public or
+        partner-facing material as of the review date. The platform's transports
+        are request/response SOAP (WCF) and REST.
+  endpointsModeled: true
+  endpointsModeledNote: |
+    ResWare publishes no public API reference or OpenAPI. The logical service
+    areas in apis.yml (Files/Orders, Documents, Contacts, Tasks, Accounting,
+    Notes, Partners) are modeled from ResWare's documented capabilities and from
+    observed partner integrations. No concrete REST/SOAP endpoint list is
+    fabricated beyond the two REST document paths publicly referenced by partner
+    integrations (/Api/files/search, /Api/files/:file_id/documents).
+sources:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+    note: ResWare product overview - title/escrow production, document management, escrow accounting, on-premises, APIs and integrations.
+  - url: https://www.qualia.com/resware-integrations/
+    type: Documentation
+    note: ResWare integrations by license tier; 60+ vendor integrations (signing/RON, recording, search, LOS, wire protection).
+  - url: https://blog.qualia.com/qualia-acquires-adeptive-resware/
+    type: PressRelease
+    note: Qualia acquisition of Adeptive Software (developer of ResWare), December 2020.
+  - url: https://www.alta.org/news-and-publications/news/20201222-Qualia-Acquires-Developer-of-ResWare
+    type: News
+    note: ALTA coverage confirming Qualia acquired the developer of ResWare (December 2020).
+  - url: https://support.proof.com/hc/en-us/articles/1500002944101-The-ResWare-Integration-For-Title-Agents
+    type: Documentation
+    note: Proof/Notarize ResWare integration uses ResWare basic SOAP services plus REST APIs (/Api/files/search, /Api/files/:file_id/documents) for pushing executed documents.
+  - url: https://www.getroo.io/docs/resware/partner-resware-to-resware/
+    type: Documentation
+    note: Partner integration detail - WCF transport with Microsoft binary protocol default and Basic Authentication for WCF on request; subscription-key REST endpoints; files, signing, notes/documents entities.
+  - url: https://www.notarize.com/blog/resware-notarize
+    type: Documentation
+    note: Notarize-ResWare integration leverages ResWare SOAP services and REST APIs; customers can build on ResWare APIs. API assistance package (20 hours dev support, REST/WCF code samples, docs); contact sales@adeptivesw.com.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket protocol surface exists. ResWare's integration API is a gated,
+    partner-only SOAP/XML (WCF) plus REST surface with no public reference. The
+    apis.yml documents the company honestly as a gated provider and models the
+    logical service areas (Files/Orders, Documents, Contacts, Tasks, Accounting,
+    Notes, Partners) without fabricating a REST surface. No AsyncAPI document was
+    created because there is no server-push transport on ResWare's own API and
+    the surface is not publicly documented.

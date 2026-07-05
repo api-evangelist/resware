@@ -1,0 +1,162 @@
+aid: resware
+url: https://raw.githubusercontent.com/api-evangelist/resware/refs/heads/main/apis.yml
+name: ResWare
+kind: company
+description: ResWare is customizable title and escrow production software for real estate
+  closings, originally built by Adeptive Software Corporation and acquired by Qualia
+  Labs in December 2020 (now shipping as ResWare 10 within the Qualia ecosystem). It
+  is an on-premises, workflow-driven platform covering title and escrow production,
+  document management and auto-generation, secure communications, and escrow
+  accounting. ResWare exposes an integration API to partners and customers that is
+  historically a SOAP/XML web-service API (built on Windows Communication Foundation /
+  WCF, Microsoft binary protocol by default with Basic Authentication available on
+  request), complemented by newer REST APIs for document handling. There is no public,
+  self-serve developer portal - API access is gated behind a partner/integration
+  program and an "API assistance" package (developer support hours, REST/WCF code
+  samples, and documentation), with pricing on request via sales@adeptivesw.com. The
+  logical service areas below are modeled from partner-integration behavior; ResWare
+  publishes no public API reference or OpenAPI, so no REST surface is fabricated here.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Title
+- Escrow
+- Real Estate
+- Closing
+- Title Production
+- SOAP
+- XML
+- WCF
+- Partner API
+- Gated
+- Qualia
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: resware:resware-files-orders-api
+  name: ResWare Files & Orders API
+  tags:
+  - Files
+  - Orders
+  - Title Production
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware/
+  properties:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+  - url: https://www.qualia.com/resware-integrations/
+    type: Documentation
+  description: Modeled logical service area for creating and managing title/escrow files
+    (orders) - the core transaction records that carry file number, property, parties,
+    and status through the closing lifecycle. Delivered over ResWare's gated SOAP/XML
+    (WCF) partner web services plus REST document endpoints (e.g. /Api/files/search).
+    Endpoints modeled from partner integrations; no public API reference is published.
+- aid: resware:resware-documents-api
+  name: ResWare Documents API
+  tags:
+  - Documents
+  - Document Management
+  - Closing Package
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware/
+  properties:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+  description: Modeled logical service area for retrieving, uploading, and generating
+    documents attached to a file - closing packages, executed documents, and
+    auto-generated forms. In partner integrations this is the REST-oriented surface
+    (e.g. /Api/files/:file_id/documents) layered on the SOAP/WCF platform. Endpoints
+    modeled; no public API reference is published.
+- aid: resware:resware-contacts-api
+  name: ResWare Contacts API
+  tags:
+  - Contacts
+  - Parties
+  - CRM
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware/
+  properties:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+  description: Modeled logical service area for the people and organizations attached
+    to a file - buyers, sellers, lenders, agents, and vendors - and their roles and
+    mappings to partner-side identifiers. Delivered over ResWare's gated SOAP/XML (WCF)
+    partner web services. Endpoints modeled; no public API reference is published.
+- aid: resware:resware-tasks-api
+  name: ResWare Tasks API
+  tags:
+  - Tasks
+  - Actions
+  - Workflow
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware/
+  properties:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+  description: Modeled logical service area for ResWare's action-based tasks and
+    multi-directional workflow steps that drive a file through its lifecycle - creating,
+    completing, and querying tasks. Delivered over ResWare's gated SOAP/XML (WCF) partner
+    web services. Endpoints modeled; no public API reference is published.
+- aid: resware:resware-accounting-api
+  name: ResWare Accounting API
+  tags:
+  - Accounting
+  - Escrow
+  - Reconciliation
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware/
+  properties:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+  description: Modeled logical service area for escrow accounting - trust ledgers,
+    receipts and disbursements, reconciliation, and remittance data tied to a file.
+    Delivered over ResWare's gated SOAP/XML (WCF) partner web services. Endpoints
+    modeled; no public API reference is published.
+- aid: resware:resware-notes-api
+  name: ResWare Notes API
+  tags:
+  - Notes
+  - Comments
+  - Activity
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware/
+  properties:
+  - url: https://www.qualia.com/resware/
+    type: Documentation
+  description: Modeled logical service area for reading and writing notes and activity
+    entries on a file, used by partners to post status updates and messages back into
+    ResWare. Delivered over ResWare's gated SOAP/XML (WCF) partner web services, with a
+    REST note endpoint observed in some integrations. Endpoints modeled; no public API
+    reference is published.
+- aid: resware:resware-partners-api
+  name: ResWare Partners API
+  tags:
+  - Partners
+  - Integrations
+  - Proxy Service
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.qualia.com/resware-integrations/
+  properties:
+  - url: https://www.qualia.com/resware-integrations/
+    type: Documentation
+  description: Modeled logical service area for ResWare's partner-integration framework -
+    the proxy/partner web-service messages that exchange orders, documents, and status
+    with external vendors (signing/RON, recording, search, LOS, wire protection, and
+    more). This is the primary SOAP/XML (WCF) integration surface. Endpoints modeled;
+    no public API reference is published.
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/qualia-labs
+- type: Website
+  url: https://resware.com
+- type: Website
+  url: https://www.qualia.com/resware/
+- type: Documentation
+  url: https://www.qualia.com/resware-integrations/
+- type: SupportPortal
+  url: https://knowledge.resware.com
+- type: Contact
+  url: mailto:sales@adeptivesw.com
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
