@@ -145,6 +145,8 @@ apis:
     more). This is the primary SOAP/XML (WCF) integration surface. Endpoints modeled;
     no public API reference is published.
 common:
+- type: DomainSecurity
+  url: security/resware-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/qualia-labs
 - type: Website
