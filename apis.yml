@@ -18,6 +18,18 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/resware.pn
 tags:
   - Title
   - Escrow
+  - Real-Estate
+  - Closing
+  - Title Production
+  - SOAP
+  - XML
+  - WCF
+  - Partner API
+  - Gated
+  - Qualia
+tags_raw:
+  - Title
+  - Escrow
   - Real Estate
   - Closing
   - Title Production
@@ -46,6 +58,10 @@ apis:
   - aid: resware:resware-files-orders-api
     name: ResWare Files & Orders API
     tags:
+      - File
+      - Order
+      - Title Production
+    tags_raw:
       - Files
       - Orders
       - Title Production
@@ -61,6 +77,10 @@ apis:
     name: ResWare Documents API
     tags:
       - Documents
+      - Document-Management
+      - Closing Package
+    tags_raw:
+      - Documents
       - Document Management
       - Closing Package
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
@@ -72,6 +92,10 @@ apis:
   - aid: resware:resware-tasks-api
     name: ResWare Tasks API
     tags:
+      - Task
+      - Actions
+      - Workflows
+    tags_raw:
       - Tasks
       - Actions
       - Workflow
@@ -108,6 +132,10 @@ apis:
   - aid: resware:resware-partners-api
     name: ResWare Partners API
     tags:
+      - Partners
+      - Integration
+      - Proxy Service
+    tags_raw:
       - Partners
       - Integrations
       - Proxy Service
