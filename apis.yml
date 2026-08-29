@@ -1,5 +1,8 @@
 aid: resware
 url: https://raw.githubusercontent.com/api-evangelist/resware/refs/heads/main/apis.yml
+x-api-posture: docs-gated
+x-api-posture-basis: observed
+x-api-posture-note: "The logical service areas below are modeled from partner-integration behavior; ResWare publishes no public API reference or OpenAPI, so no REST surface is fabricated here."
 name: ResWare
 kind: company
 description: ResWare is customizable title and escrow production software for real estate closings, originally built by Adeptive Software Corporation and acquired by Qualia Labs in December 2020 (now shipping as ResWare 10 within the Qualia ecosystem). It is an on-premises, workflow-driven platform covering title and escrow production, document management and auto-generation, secure communications, and escrow accounting. ResWare exposes an integration API to partners and customers that is historically a SOAP/XML web-service API (built on Windows Communication Foundation / WCF, Microsoft binary protocol by default with Basic Authentication available on request), complemented by newer REST APIs for document handling. There is no public, self-serve developer portal - API access is gated behind a partner/integration program and an "API assistance" package (developer support hours, REST/WCF code samples, and documentation), with pricing on request via sales@adeptivesw.com. The logical service areas below are modeled from partner-integration behavior; ResWare publishes no public API reference or OpenAPI, so no REST surface is fabricated here.
