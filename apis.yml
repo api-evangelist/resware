@@ -162,6 +162,11 @@ apis:
         type: Documentation
     description: Modeled logical service area for ResWare's partner-integration framework - the proxy/partner web-service messages that exchange orders, documents, and status with external vendors (signing/RON, recording, search, LOS, wire protection, and more). This is the primary SOAP/XML (WCF) integration surface. Endpoints modeled; no public API reference is published.
 common:
+  - type: ParentCompany
+    url: https://apis.io/providers/qualia-title/
+    name: Qualia
+    x-relationship: acquired
+    x-evidence: "https://resware.com now redirects to qualia.com; the description names no acquirer — ParentCompany records the CURRENT owner (roadmap#390, Kin 2026-09-18)"
   - type: DomainSecurity
     url: security/resware-domain-security.yml
   - type: LinkedIn
