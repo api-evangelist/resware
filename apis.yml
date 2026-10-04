@@ -34,7 +34,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/resware.pn
 tags:
   - Title
   - Escrow
-  - Real-Estate
+  - Real Estate
   - Closing
   - Title Production
   - SOAP
@@ -55,11 +55,13 @@ tags_raw:
   - Partner API
   - Gated
   - Qualia
+  - Real-Estate
 created: '2026-07-04'
 modified: '2026-07-25'
 specificationVersion: '0.23'
 apis:
   - aid: resware:resware-contacts-api
+    endpointsModeled: true
     name: ResWare Contacts API
     tags:
       - Contacts
@@ -72,6 +74,7 @@ apis:
         type: Documentation
     description: Modeled logical service area for the people and organizations attached to a file - buyers, sellers, lenders, agents, and vendors - and their roles and mappings to partner-side identifiers. Delivered over ResWare's gated SOAP/XML (WCF) partner web services. Endpoints modeled; no public API reference is published.
   - aid: resware:resware-files-orders-api
+    endpointsModeled: true
     name: ResWare Files & Orders API
     tags:
       - File
@@ -90,15 +93,17 @@ apis:
         type: Documentation
     description: Modeled logical service area for creating and managing title/escrow files (orders) - the core transaction records that carry file number, property, parties, and status through the closing lifecycle. Delivered over ResWare's gated SOAP/XML (WCF) partner web services plus REST document endpoints (e.g. /Api/files/search). Endpoints modeled from partner integrations; no public API reference is published.
   - aid: resware:resware-documents-api
+    endpointsModeled: true
     name: ResWare Documents API
     tags:
       - Documents
-      - Document-Management
+      - Document Management
       - Closing Package
     tags_raw:
       - Documents
       - Document Management
       - Closing Package
+      - Document-Management
     image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.qualia.com/resware/
     properties:
@@ -106,6 +111,7 @@ apis:
         type: Documentation
     description: Modeled logical service area for retrieving, uploading, and generating documents attached to a file - closing packages, executed documents, and auto-generated forms. In partner integrations this is the REST-oriented surface (e.g. /Api/files/:file_id/documents) layered on the SOAP/WCF platform. Endpoints modeled; no public API reference is published.
   - aid: resware:resware-tasks-api
+    endpointsModeled: true
     name: ResWare Tasks API
     tags:
       - Task
@@ -122,6 +128,7 @@ apis:
         type: Documentation
     description: Modeled logical service area for ResWare's action-based tasks and multi-directional workflow steps that drive a file through its lifecycle - creating, completing, and querying tasks. Delivered over ResWare's gated SOAP/XML (WCF) partner web services. Endpoints modeled; no public API reference is published.
   - aid: resware:resware-accounting-api
+    endpointsModeled: true
     name: ResWare Accounting API
     tags:
       - Accounting
@@ -134,6 +141,7 @@ apis:
         type: Documentation
     description: Modeled logical service area for escrow accounting - trust ledgers, receipts and disbursements, reconciliation, and remittance data tied to a file. Delivered over ResWare's gated SOAP/XML (WCF) partner web services. Endpoints modeled; no public API reference is published.
   - aid: resware:resware-notes-api
+    endpointsModeled: true
     name: ResWare Notes API
     tags:
       - Notes
@@ -146,6 +154,7 @@ apis:
         type: Documentation
     description: Modeled logical service area for reading and writing notes and activity entries on a file, used by partners to post status updates and messages back into ResWare. Delivered over ResWare's gated SOAP/XML (WCF) partner web services, with a REST note endpoint observed in some integrations. Endpoints modeled; no public API reference is published.
   - aid: resware:resware-partners-api
+    endpointsModeled: true
     name: ResWare Partners API
     tags:
       - Partners
